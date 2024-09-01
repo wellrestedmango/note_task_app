@@ -6,28 +6,33 @@
 
 {% block body %}
 <div>
+
+</div>
+<div>
+    <h1>Eric's Task App</h1>
+    <h2>Add a task and get working</h2>
     <form method="POST">
         <label for="title">Title</label>
         <input type="text" id="title" name="title">
-
+        <br>
         <label for="description">Description</label>
         <input type="text" id="description" name="description">
-
+        <br>
         <label for="due-date">Due Date</label>
         <input type="date" id="due-date" name="due-date">
-
+        <br>
         <label for="task-category">Category</label>
         <input type="text" id="task-category" name="task-category">
-
+        <br>
         <label for="submit">Submit Form</label>
         <input type="submit" id="submit" content="Submit" class="submit">
 
     </form>
 </div>
+{% for task in task_list %}
+<hr>
 <div>
-    <h3>Current Tasks</h3>
     <table>
-        {% for task in task_list %}
         <tr>
             <th>Title</th>
             <td>{{ task.title }}</td>
@@ -51,12 +56,13 @@
         <tr>
             <th>This will be a link to update</th>
         </tr>
-        <tr>
-            <td>
-                <a href="/delete/{{ task.id }}">Link to delete</a>
-            </td>
-        </tr>
-        {% endfor %}
     </table>
-</div>
+    <br>
+    <a href="/update/{{ task.id }}">Update</a>
+    <br>
+    <a href="/delete/{{ task.id }}">Delete</a>
+ </div>
+<hr>
+{% endfor %}
+
 {% endblock %}

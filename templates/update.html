@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title> Landing Page </title>
+{% endblock %}
+
+{% block body %}
+<div>
+    <h1>Update this task</h1>
+    <h2>Then hit submit</h2>
+</div>
+<div>
+    <form method="POST">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" value="{{ task.title }}">
+        <br>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" value = "{{ task.description }}">
+        <br>
+        <label for="due-date">Due Date</label>
+        <input type="date" id="due-date" name="due-date">
+        <br>
+        <label for="task-category">Category</label>
+        <input type="text" id="task-category" name="task-category" value="{{ task.category }}">
+        <br>
+        <label for="submit">Submit Form</label>
+        <input type="submit" id="submit" content="Submit" class="submit">
+    </form>
+</div>
+{% endblock %}

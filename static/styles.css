@@ -1,6 +1,19 @@
-input {
-    width: 100%
-    display: block;
-    box-sizing: border-box;
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 20px;
+    row-gap: 50px;
 }
 
+#description {
+    height: 50px;
+}
+
+table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
