@@ -1,10 +1,9 @@
 body {
-    display: flex;
+    display: inline-grid;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: stretch;
     padding: 20px;
     row-gap: 50px;
+    width: 100%
 }
 
 #description {
@@ -16,4 +15,27 @@ table {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: stretch;
+}
+
+.1 {
+    grid-area: header;
+}
+.2 {
+    grid-area: main;
+}
+.4 {
+    grid-area: sidebar;
+}
+.submit{
+    grid-area: footer
+}
+
+form {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header header header"
+    "main main main main"
+    "sidebar sidebar footer footer";
 }
